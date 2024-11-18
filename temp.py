@@ -1,3 +1,5 @@
+# This is the temporary file that I used to use for testing different things in appearance and feasibility and can even lots and lots of bugs which have to be
+# ignored as this is only for testing.
 import cv2
 import torch
 import time
@@ -6,7 +8,7 @@ import mediapipe as mp
 import numpy as np
 from model import Model
 
-# Initialization
+
 current_path = os.getcwd()
 
 cam_number = 0
@@ -20,13 +22,12 @@ eraser_size = 50
 pen_size = 5
 intermediate_step_gap = 1
 
-# Define color squares (now will be drawn on canvas)
 color_squares = [
-    {"color": (255, 0, 0), "pos": (50, 50), "size": 50},   # Blue
-    {"color": (0, 255, 0), "pos": (110, 50), "size": 50},  # Green
-    {"color": (0, 0, 255), "pos": (170, 50), "size": 50},  # Red
-    {"color": (0, 255, 255), "pos": (230, 50), "size": 50},# Yellow
-    {"color": (255, 0, 255), "pos": (290, 50), "size": 50} # Pink
+    {"color": (255, 0, 0), "pos": (50, 50), "size": 50},   
+    {"color": (0, 255, 0), "pos": (110, 50), "size": 50},  
+    {"color": (0, 0, 255), "pos": (170, 50), "size": 50},  
+    {"color": (0, 255, 255), "pos": (230, 50), "size": 50},
+    {"color": (255, 0, 255), "pos": (290, 50), "size": 50} 
 ]
 
 cv2.namedWindow('control')
@@ -40,7 +41,7 @@ def process_click(event, x, y, flags, params):
     global canvas
     if event == cv2.EVENT_LBUTTONDOWN:
         if button[0] < y < button[1] and button[2] < x < button[3]:
-            cv2.imwrite('Image_' + str(time.time()) + '.png', canvas)  # Save the canvas image
+            cv2.imwrite('Image_' + str(time.time()) + '.png', canvas) 
             img[:80, :] = (0, 0, 255)
 
 cv2.setMouseCallback('control', process_click)

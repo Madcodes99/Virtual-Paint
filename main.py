@@ -20,11 +20,11 @@ pen_size = 5
 intermediate_step_gap = 1
 
 color_squares = [
-    {"color": (255, 0, 0), "pos": (50, 50), "size": 50},   # Blue
-    {"color": (0, 255, 0), "pos": (110, 50), "size": 50},  # Green
-    {"color": (0, 0, 255), "pos": (170, 50), "size": 50},  # Red
-    {"color": (0, 255, 255), "pos": (230, 50), "size": 50},# Yellow
-    {"color": (255, 0, 255), "pos": (290, 50), "size": 50} # Pink
+    {"color": (255, 0, 0), "pos": (50, 50), "size": 50},   
+    {"color": (0, 255, 0), "pos": (110, 50), "size": 50},  
+    {"color": (0, 0, 255), "pos": (170, 50), "size": 50},  
+    {"color": (0, 255, 255), "pos": (230, 50), "size": 50},
+    {"color": (255, 0, 255), "pos": (290, 50), "size": 50} 
 ]
 
 brush_squares = [
@@ -156,7 +156,7 @@ while True:
             cv2.putText(canvas, 'Brush Size', (1050, 30), font, fontScale, fontColor, lineType)
 
             for square in brush_squares:
-                center = (square['pos'][0] + square['display_size'] // 2, square['pos'][1] + square['display_size'] // 2)  # Center of the circle
+                center = (square['pos'][0] + square['display_size'] // 2, square['pos'][1] + square['display_size'] // 2)
                 radius = square['display_size'] // 2 
                 cv2.circle(canvas, center, radius, (255, 255, 255), 2) 
 
